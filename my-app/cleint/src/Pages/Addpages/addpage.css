@@ -1,0 +1,73 @@
+.imgCont{
+    display: flex;
+    justify-content: center;
+}
+.imgCont img{
+    width: 80%;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    height: 500px;
+
+}
+.formCont{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border: none;
+}
+.addIcon{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 6px;
+    margin-right: 5px;
+    font-size: large;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.textAr{
+    display: flex;
+    justify-content: center;
+}
+.tiitleInput{
+    width: 70vw;
+    height: 30px;
+    border: none;
+    font-size: 25px;
+}
+.tiitleInput:focus{
+    outline: none;
+}
+.area{
+    width: 70vw;
+    margin-top: 20px;
+    border: none;
+    font-size: x-large;
+}
+.area:focus{
+    outline: none;
+}
+.publisCont{
+    display: flex;
+    margin-right: 120px;
+    position: relative;
+    margin-top: 50px;
+    padding-bottom: 100px;
+
+}
+.publishBTN{
+    color: white;
+    background-color: teal;
+    border: none;
+    border-radius:10px;
+    font-size: 25px;
+    padding: 5px;
+    left: 90%;
+    position: absolute;  
+}
+
+

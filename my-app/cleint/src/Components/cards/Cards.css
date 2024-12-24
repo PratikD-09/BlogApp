@@ -1,0 +1,80 @@
+.cardDiv{
+    margin: 40px;
+    border: white;
+    width: px;
+    font-family: "Lora", serif;
+    border: 2px solid rgb(139, 139, 139);
+    padding: 10px;
+}
+.cardImg{
+    width: 250px;
+    height: 200px;
+    padding-bottom: 15px;
+}
+.cardTxt{
+     display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.cardBtn{
+    background-color: rgba(146, 146, 146, 0.156);
+    border-radius: 10px;
+    border: white;
+    margin-left: 150px;
+}
+.catogary{
+    text-align: center;
+    font-size: 10px;
+    color: gray;
+    margin-top: -10px;
+}
+.time{
+    text-align: center;
+    font-size: 10px;
+    color: gray;
+    margin-top: -10px;
+}
+.title{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

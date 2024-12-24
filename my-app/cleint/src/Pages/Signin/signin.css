@@ -1,0 +1,54 @@
+.bodyOut{
+    background-color: rgb(255, 248, 171);
+    padding-bottom: 210px;
+    background-image: url("https://wallpaperaccess.com/full/4893732.jpg");
+}
+.mainOut{
+    font-family: "Varela", sans-serif;
+
+}
+.mainOut h1{
+    padding-top: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.mainOut form{
+    width: 500px;
+}
+.mainOut button{
+    color: white;
+    background-color:rgb(46, 66, 63);
+    border: none;
+    border-radius:10px;
+    font-size: 25px;
+    padding: 7px;
+}
+.mainOut input{
+    background: none;
+    color: white;
+}
+.mainOut input::placeholder{
+   
+    color: white;
+}
+.loginBTN{
+    color: white;
+    background-color:rgb(28, 222, 193);
+    border: none;
+    border-radius:10px;
+    font-size: 25px;
+    padding: 7px;
+    position: absolute;
+    top: 10%;
+    left: 90%;
+
+}

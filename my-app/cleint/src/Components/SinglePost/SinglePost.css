@@ -1,0 +1,92 @@
+.singlepost{
+    flex: 9;
+}
+.singleIMG img{
+    width: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 10px;
+
+}
+.header{
+    display: flex;
+    font-family: "Varela", sans-serif;
+}
+.heading{
+    text-align: center;
+    width: 75%;
+    display: flex;
+    justify-content: end;
+}
+.iconsdiv{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.icons i {
+    margin-left: 10px;
+    font-size: 25px;
+}
+.edit{
+    color:rgb(132 221 0);
+}
+.delete{
+    color: #ff3131;
+}
+.AuthorTime{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #c07b1e;
+    font-size: larger;
+    font-family: "Josefin Sans", sans-serif;
+}
+.para{
+    font-size: 18px;
+    line-height: 25px;
+    padding-left: 50px;
+}
+.para::first-letter{
+    margin-left: 20px ;
+    font-size: 30px;
+    font-weight: 600px;
+}
+.headerInput{
+    display: flex;
+    justify-content: center;
+    font-family: "Varela", sans-serif;
+}
+.updateInput{
+    width: 75%;
+    display: flex;
+    text-align: center;
+    color: gray;
+    font-size: x-large;
+}
+.txtD{
+    display: flex;
+    justify-content: center;
+}
+.updateTextarea{
+    width: 70vw;
+    margin-top: 20px;
+    border: none;
+    font-size: x-large;
+}
+.updateTextarea:focus{
+    outline: none;
+}
+.UpdateBTN{
+    background-color: teal;
+    color: white;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    padding: 5px;
+    margin-left: 500px;
+    cursor: pointer;
+    margin-top: 10px;
+}
