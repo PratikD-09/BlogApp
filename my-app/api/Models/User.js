@@ -18,7 +18,7 @@ const usernameSchima = new mongoose.Schema({
     },
     proImg: {
         type: String,
-        default: ""
+        required: false,
     }
 
 

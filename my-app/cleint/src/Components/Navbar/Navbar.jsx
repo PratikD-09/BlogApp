@@ -10,7 +10,7 @@ export default function Navbar() {
   const handleLogout = ()=>{
     dispatch({type:"LOGOUT "})
   }
-
+console.log(user);
   return (
     <div className="nav">
         
@@ -36,7 +36,8 @@ export default function Navbar() {
             user ? 
             <>
             <Link className='link' to="/setings">
-            <img src={PF+user.proImg} alt="img" className="navimg" ></img>
+            <img src="https://static.vecteezy.com/system/resources/previews/036/280/651/original/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg" alt="Profile" className="navimg" /> 
+
             </Link>
             <i className="fa-solid fa-magnifying-glass"></i></>
             :

@@ -14,7 +14,7 @@ export default function Sidebar() {
   },[])
   return (
     <div className='Cont'>
-        <h4>About Me</h4>
+        <h4> About Web</h4>
         <img src="https://i.pinimg.com/originals/b9/ff/c8/b9ffc88ad813f68a723558620ce3ff47.jpg" alt="img" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magni recusandae quidem repudiandae sequi dolore ratione, quisquam quia commodi, cum consectetur tenetur eum dolor nemo velit reprehenderit vel et eos!</p>
         <h4>CATEGORIES</h4>

@@ -25,34 +25,42 @@ export default function Setings() {
         } catch (error){ }
       } 
 
-
-    const handleSubmit = async (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({ type: "UPDATE_START" });
+      
         const updatedUser = {
-            userId: user._id,
-            username,
-            email,
-            password,
+          userId: user._id,
+          username: username || user.username,
+          email: email || user.email,
+          password: password,
+          proImg: user.proImg,
         };
+      
         if (file) {
-            const data = new FormData();
-            const filename = Date.now() + file.name;
-            data.append("name", filename);
-            data.append("file", file);
-            updatedUser.proImg = filename;
-            try {
-                await axios.post("/upload", data);
-            } catch (err) { }
+          const data = new FormData();
+          const filename = Date.now() + file.name;
+          data.append("name", filename);
+          data.append("file", file);
+          updatedUser.proImg = filename; // update the image filename in user
+      
+          try {
+            await axios.post("/api/upload", data); // upload image
+          } catch (err) {
+            console.log("Image upload failed:", err);
+          }
         }
+      
         try {
-            const res = await axios.put("/users/" + user._id, updatedUser);
-            setSuccess(true);
-            dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+          const res = await axios.put("/api/users/" + user._id, updatedUser);
+          dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+          setSuccess(true);
         } catch (err) {
-            dispatch({ type: "UPDATE_FAILURE" });
+          dispatch({ type: "UPDATE_FAILURE" });
+          setSuccess(false);
         }
-    };
+      };
+      
 
     return (
         <div className='setiings'>
@@ -69,6 +77,22 @@ export default function Setings() {
                     <form action="submit" onSubmit={handleSubmit}>
                         <label htmlFor="fileInput1"><i class="fa-solid fa-plus addIcon"></i></label>
                         <input id='fileInput1' type="file" onChange={(e) => setFile(e.target.files[0])} style={{ display: 'none' }} />
+                        {/* <span className='editPro'>
+                                <label htmlFor="fileInput1">
+                                    <img
+                                    src={file ? URL.createObjectURL(file) : PF + user.proImg}
+                                    alt="Profile"
+                                    />
+                                    <i className="fa-regular fa-pen-to-square"></i>
+                                </label>
+                                <input
+                                    id="fileInput1"
+                                    type="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                    style={{ display: 'none' }}
+                                />
+                                </span> */}
+
 
                         <label htmlFor="text">Username</label>
                         <input type='text' placeholder={user.username} onChange={e => (setusername(e.target.value))}></input>

@@ -1,38 +1,47 @@
 const router = require('express').Router();
 const User = require("../Models/User");
-const Posts = require("../Models/Posts")
 const bcrypt = require('bcrypt');
+const path = require('path');
 
-//UPDATE
+
+// UPDATE User
 router.put("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     if (req.body.password) {
       const salt = await bcrypt.genSalt(10);
       req.body.password = await bcrypt.hash(req.body.password, salt);
     }
+
+    // Handle profile image update if a new image is uploaded
+    if (req.body.proImg) {
+      req.body.proImg = req.body.proImg;  // Save the profile image name in the user's document
+    }
+
     try {
       const updatedUser = await User.findByIdAndUpdate(
         req.params.id,
         {
-          $set: req.body,
+          $set: req.body,  // Update other fields
         },
         { new: true }
       );
-      res.status(200).json(updatedUser);
+      res.status(200).json(updatedUser);  // Return updated user
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err);  // Return error if the update fails
     }
   } else {
     res.status(401).json("You can update only your account!");
   }
 });
 
-//DELETE
+
+// DELETE User
 router.delete("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     try {
       const user = await User.findById(req.params.id);
       try {
+        // Deleting user's posts (if any)
         await Post.deleteMany({ username: user.username });
         await User.findByIdAndDelete(req.params.id);
         res.status(200).json("User has been deleted...");
@@ -47,7 +56,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-//GET USER
+// GET User (without password)
 router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -59,3 +68,4 @@ router.get("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
