@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Ignore node modules
+node_modules/
+
+# Ignore environment files
+.env
+
+# Ignore the images folder
+images/
